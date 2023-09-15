@@ -1,0 +1,10 @@
+
+
+Back page
+    
+    .card -> height = 182px, margin-block = 15px, p-2
+    .row -> py-2 & pe-4
+
+Front page 
+    . row -> 
+    .card -> p-2, height = 182px, margin-block = 15px

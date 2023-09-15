@@ -7,11 +7,44 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <title>oll Card | Front</title>
     <style>
+        @page {
+            size: A3 portrait;
+            margin: 0;
+            padding: 20px 0;
+        }
+        body {
+            width: 11.7in;
+            background: #fff;
+            padding: 30px 0;
+        }
+
+        html {
+            background: #aaa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         .card {
             line-height: normal;
-            height: 182px;
+            height: 172px;
             margin-block: 17px;
-            /* width: 474px; */
+            /* width: 463px; */
+            display: flex;
+            vertical-align:
+            middle;
+            justify-content: center;
+        }
+        .card-inner {
+            height: 160px;
+            width: 100%;
+            display: flex;
+            vertical-align: middle;
+            justify-content: center;
+        }
+        .card-inner img {
+            height: 160px;
+            width: 100%;
         }
         .green-bg {
             background: #193f1a;
@@ -55,12 +88,25 @@
         @media (max-width: 600px) {
 
         }
+
+        /* @media print {
+            .card {
+                width: 336px;
+                height: 172px;
+            }
+            .card-inner {
+                height: 162px; width: 315px;
+            }
+            .card-inner img {
+                height: 162px; width: 315px;
+            }
+        } */
         
     </style>
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row py-2 pe-4">
+    <div class="">
+        <div class="row py-2 pe-4" id="card">
 
             <!-- <div class="card col-lg-4 col-md-4 col-sm-12 p-2 text-center text-white">
                 <div class="green-bg p-2 pt-2">
@@ -80,11 +126,32 @@
                 </div>
             </div> -->
 
-            <div class="card col-lg-4 col-md-4 col-sm-12 p-2 text-center text-white">
-                <img id="img2" src="card.jpg" alt="card">
-            </div>
+            <!-- <div class="card col-lg-4 col-md-4 col-sm-12 p-2 text-center text-white">
+                <div style="height: 182px; width: 467px; display: flex; vertical-align: middle; justify-content: center; padding-right: 17px;">
+                    <img id="img2" src="card.jpg" alt="card" style="height: 165px; width: 450px;">
+                </div>
+            </div> -->
 
         </div>    
     </div>
+
+    <script>
+
+        let html = `
+            <div class="card col-lg-4 col-md-4 col-sm-12 p-2 text-center text-white">
+                <div class="card-inner" style="">
+                    <img id="img2" src="card.jpg" alt="card" style="">
+                </div>
+            </div>
+        `
+
+for (let index = 0; index < 50; index++) {
+            document.getElementById('card').innerHTML += html;
+
+            // if (index !== 0 && index % 504) {
+            //     $('#card').append(`<br> <br>`);
+            // }
+        }
+    </script>
 </body>
 </html>
